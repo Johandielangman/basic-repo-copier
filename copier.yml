@@ -9,18 +9,19 @@ author:
 
 use_precommit:
     type: bool
-    default: false
+    default: true
     help: Do you want to use pre-commit?
 
 use_kofi:
     type: bool
-    default: false
+    default: true
     help: Do you want to add a ko-fi link?
 
 kofi_username:
     type: str
     when: "{{ use_kofi }}"
     help: The username of your ko-fi account
+    default: johanlangman
 
 _subdirectory: "template"
 
