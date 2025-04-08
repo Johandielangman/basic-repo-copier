@@ -2,10 +2,20 @@ project_name:
     type: str
     help: What is the name of the project?
 
-author:
+github_username:
     type: str
-    help: What is the name of the author?
+    help: What your Github username?
     default: Johandielangman
+
+github_public:
+    type: bool
+    default: true
+    help: Will the repo be public?
+
+github_repo_name:
+    type: str
+    when: "{{ github_public }}"
+    help: What is the name of the repo?
 
 use_precommit:
     type: bool
