@@ -1,35 +1,14 @@
-service_name:
-  type: str
-  help: Name of your project (lowercase, hyphens like 'banter-bus-api')
-  default: banter-bus-api
+project_name:
+    type: str
+    help: What is the name of the project?
 
-service_title:
-  type: str
-  help: "Title of your project (title case like 'Banter Bus API')"
-  default: "{{service_name | title | replace('-', ' ')}}"
+author:
+    type: str
+    help: What is the name of the author?
+    default: Johandielangman
 
-service_prefix:
-  type: str
-  help: "Prefix of environment variables for this service (upper case like 'BANTER_BUS_API')"
-  default: "{{service_name | upper | replace('-', '_')}}"
 
-database_name:
-  type: str
-  help: "Your database name (lowercase, hypens replaced with underscore and no banter-bus like 'api')"
-  default: "{{service_name | replace('-', '_') | replace('banter_bus_', '')}}"
+_subdirectory: "template"
 
-short_description:
-  type: str
-  help: "A short description of the project"
-
-include_ci:
-  type: bool
-  help: "Whether to include a Gitlab CI file"
-  default: true
-
-_exclude:
-  - copier.yaml
-  - __pycache__
-  - .git
-  - CHANGELOG.md
-  - README.md
+_tasks:
+    - "git init --initial-branch=main"
